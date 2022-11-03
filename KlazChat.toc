@@ -1,0 +1,17 @@
+## Interface: 100002
+## Title: Klaz|cff1994ffChat|r
+## Author: Klaz
+## Notes-zhCN:
+## Notes-zhTW:
+## Notes-frFR:
+## Notes-deDE:
+## Notes-enGB: Styles default chat frames.
+## Notes-enUS: Styles default chat frames.
+## Notes-koKR:
+## Notes-ptBR:
+## Notes-ruRU:
+## Notes-esES:
+## Notes-esMX:
+
+Modules\CopyLinks.lua
+Modules\Style.lua
