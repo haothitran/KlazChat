@@ -13,5 +13,8 @@
 ## Notes-esES:
 ## Notes-esMX:
 
+Core\Localization.lua
+
 Modules\CopyLinks.lua
+Modules\ShortChannelNames.lua
 Modules\Style.lua

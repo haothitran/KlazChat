@@ -10,6 +10,7 @@ There are no in-game options. All settings are hard-coded.
   - Remove social buttons
   - Remove chat tab textures
 - Copy url links
+- Short channel names (e.g. Guild -> G)
 
 ## Installation
 
