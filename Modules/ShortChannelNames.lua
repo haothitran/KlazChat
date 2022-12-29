@@ -23,3 +23,29 @@ _G.CHAT_FLAG_DND = '|cffFF0000'..L.SHORT_FLAG_DND..'|r '
 _G.CHAT_FLAG_GM = '|cff4154F5'..L.SHORT_FLAG_GM..'|r '
 _G.ERR_FRIEND_ONLINE_SS = '|Hplayer:%s|h%s|h '..L.SHORT_STATUS_ONLINE
 _G.ERR_FRIEND_OFFLINE_S = '%s '..L.SHORT_STATUS_OFFLINE
+
+local f = CreateFrame('Frame')
+f:RegisterEvent('PLAYER_ENTERING_WORLD')
+f:SetScript('OnEvent', function(self, event)
+
+  local origs = {}
+
+  local function Strip(info, name)
+    return string.format("|Hplayer:%s|h[%s]|h", info, name:gsub("%-[^|]+", ""))
+  end
+
+  local AddMessage = function(self, text, ...)
+    if type(text) == "string" then
+      text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
+      text = text:gsub("|Hplayer:(.-)|h%[(.-)%]|h", Strip)
+    end
+    return origs[self](self, text, ...)
+  end
+
+  for i = 1, NUM_CHAT_WINDOWS do
+    if i ~= 2 then
+      origs[_G['ChatFrame' .. i]] = _G['ChatFrame' .. i].AddMessage
+      _G['ChatFrame' .. i].AddMessage = AddMessage
+    end
+  end
+end)
