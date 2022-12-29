@@ -46,6 +46,7 @@ f:SetScript('OnEvent', function(self, event)
     editbox:ClearAllPoints()
     editbox:SetPoint('TOPLEFT', ChatFrame1, 'BOTTOMLEFT', -8, -2)
     editbox:SetPoint('TOPRIGHT', ChatFrame1, 'BOTTOMRIGHT', 28, -2)
+    editbox:SetAltArrowKeyMode(false)
 
     -- hide chat tabs textures
     local tab = _G[name..'Tab']
